@@ -10,7 +10,7 @@ You can download and run an instance of the eventstore on your local development
 If you are a docker user you can set up an eventstore server using the included Docker Compose file.
 
 ```
-$ github.com/jetbasrawi/go.geteventstore/examples/docker-compose up
+$ github.com/projectbear/go.geteventstore/examples/docker-compose up
 
 ```
 

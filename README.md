@@ -1,5 +1,5 @@
 # Go.GetEventStore 
-[![license](https://img.shields.io/badge/license-BSD-blue.svg?maxAge=2592000)](https://github.com/jetbasrawi/go.geteventstore/blob/master/LICENSE.md) [![Go Report Card](https://goreportcard.com/badge/github.com/jetbasrawi/go.geteventstore)](https://goreportcard.com/report/github.com/jetbasrawi/go.geteventstore) [![GoDoc](https://godoc.org/github.com/jetbasrawi/go.geteventstore?status.svg)](https://godoc.org/github.com/jetbasrawi/go.geteventstore)
+[![license](https://img.shields.io/badge/license-BSD-blue.svg?maxAge=2592000)](https://github.com/projectbear/go.geteventstore/blob/master/LICENSE.md) [![Go Report Card](https://goreportcard.com/badge/github.com/projectbear/go.geteventstore)](https://goreportcard.com/report/github.com/projectbear/go.geteventstore) [![GoDoc](https://godoc.org/github.com/projectbear/go.geteventstore?status.svg)](https://godoc.org/github.com/projectbear/go.geteventstore)
 
 ## A Golang client for EventStore 3.x HTTP API. 
 Go.GetEventStore is a http client for [GetEventStore](https://geteventstore.com) written in Go. The 
@@ -7,7 +7,7 @@ client abstracts interaction with the GetEventStore HTTP API providing easy to u
 for reading and writing of events and event metadata.
 
 ## CQRS reference implementation
-An full example CQRS implementation using go.geteventstore can be found at [go.cqrs](https://github.com/jetbasrawi/go.cqrs)
+An full example CQRS implementation using go.geteventstore can be found at [go.cqrs](https://github.com/projectbear/go.cqrs)
 
 ### Supported features
 | Feature | Description |
@@ -28,12 +28,12 @@ the client in more detail, heavily commented example code can be found in the ex
 
 ### Get the package
 ```
-    $ go get github.com/jetbasrawi/go.geteventstore
+    $ go get github.com/projectbear/go.geteventstore
 ```
 
 ### Import the package
 ```go 
-    import "github.com/jetbasrawi/go.geteventstore"
+    import "github.com/projectbear/go.geteventstore"
 ```
 
 ### Create a new client
@@ -194,7 +194,7 @@ some dependencies.
 You will need the go.geteventstore.testfeed package.
 
 ```
-    $ go get github.com/jetbasrawi/go.geteventstore.testfeed
+    $ go get github.com/projectbear/go.geteventstore.testfeed
 
 ```
 You will also need the Check.V1 package which is used for assertions in unit tests.

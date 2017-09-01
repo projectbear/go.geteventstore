@@ -16,7 +16,8 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/jetbasrawi/go.geteventstore/atom"
+	"github.com/projectbear/go.geteventstore/atom"
+	"sync"
 )
 
 // Response encapsulates HTTP responses from the server.
@@ -90,6 +91,7 @@ type Client struct {
 	baseURL     *url.URL
 	credentials *basicAuthCredentials
 	headers     map[string]string
+	sync.RWMutex
 }
 
 // NewClient returns a new client.
@@ -292,11 +294,15 @@ func (c *Client) GetMetadataURL(stream string) (string, *Response, error) {
 //
 // Any headers that are set on the client will be included in requests to the eventstore.
 func (c *Client) SetHeader(key, value string) {
+	c.Lock()
+	defer c.Unlock()
 	c.headers[key] = value
 }
 
 // DeleteHeader deletes a header from the collection of headers.
 func (c *Client) DeleteHeader(key string) {
+	c.Lock()
+	defer c.Unlock()
 	delete(c.headers, key)
 }
 
@@ -364,12 +370,15 @@ func (c *Client) NewRequest(method, urlString string, body interface{}) (*http.R
 		req.SetBasicAuth(c.credentials.Username, c.credentials.Password)
 	}
 
+	c.RLock()
+	defer c.RLock()
 	for k, v := range c.headers {
 		req.Header.Set(k, v)
 	}
 
 	return req, nil
 }
+
 
 // Do executes requests to the server.
 //

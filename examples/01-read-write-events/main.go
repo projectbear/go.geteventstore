@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/jetbasrawi/go.geteventstore"
+	"github.com/projectbear/go.geteventstore"
 )
 
 var eventActivators map[string]func() (interface{}, interface{})
